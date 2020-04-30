@@ -50,6 +50,7 @@ struct RoomContainerView: View {
 struct RoomView: View {
     @Environment(\.userId) var userId
     @EnvironmentObject var room: NIORoom
+    @EnvironmentObject var store: AccountStore
 
     var events: EventCollection
     var isDirect: Bool
@@ -67,6 +68,8 @@ struct RoomView: View {
     @State private var message = ""
     @State private var highlightMessage: String?
 
+    @State private var firstMessage = false
+
     var body: some View {
         VStack {
             ReverseList(events.renderableEvents) { event in
@@ -83,6 +86,12 @@ struct RoomView: View {
                                     onEdit: { self.edit(event: event) },
                                     onRedact: { self.eventToRedact = event.eventId }))
                     .padding(.horizontal)
+                    .onAppear(perform: {
+                        if !self.firstMessage {
+                            self.firstMessage = true
+                            self.store.pagenate(room: self.room, event: event)
+                        }
+                    })
             }
             if !(room.room.typingUsers?.filter { $0 != userId }.isEmpty ?? false) {
                 TypingIndicatorView()

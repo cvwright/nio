@@ -151,4 +151,26 @@ class AccountStore: ObservableObject {
             .sorted { $0.summary.lastMessageDate > $1.summary.lastMessageDate }
             ?? []
     }
+
+    var listenReferenceRoom: Any?
+
+    func pagenate(room: NIORoom, event: MXEvent) {
+        room.room.liveTimeline { timeline in
+            self.listenReferenceRoom = timeline?.listenToEvents { event, direction, roomState in
+                print(event)
+                room.add(event: event, direction: direction, roomState: roomState)
+                self.objectWillChange.send()
+            }
+            timeline?.resetPagination()
+            let canPage = timeline?.canPaginate(.backwards) ?? false
+            if canPage {
+                timeline?.paginate(20, direction: .backwards, onlyFromStore: false) {response in
+                    if response.isSuccess {
+                        print(response.value)
+                        //room.add(event: response.value, direction: .backwards, roomState: nil)
+                    }
+                }
+            }
+        }
+    }
 }
