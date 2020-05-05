@@ -81,3 +81,5 @@
 "settings.title" = "Settings";
 "settings.accent-color" = "Accent Color";
 "settings.log-out" = "Log Out";
+
+"new-conversation.title" = "New Chat";
