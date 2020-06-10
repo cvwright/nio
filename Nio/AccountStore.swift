@@ -13,7 +13,7 @@ enum LoginState {
 }
 
 class AccountStore: ObservableObject {
-    let keychain = Keychain(service: "chat.nio.credentials")
+    let keychain = Keychain(service: "chat.nio.credentials", accessGroup: "VL26UCY4XZ.nio.keychain")
     var client: MXRestClient?
     var session: MXSession?
     var fileStore: MXFileStore?
@@ -27,6 +27,9 @@ class AccountStore: ObservableObject {
                 .from(keychain)?
                 .clear(from: keychain)
         }
+
+        let defaults = UserDefaults(suiteName: "group.stefan.chat.nio")
+        defaults?.set([], forKey: "users")
 
         if let credentials = MXCredentials.from(keychain) {
             self.loginState = .authenticating
