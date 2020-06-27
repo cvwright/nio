@@ -79,7 +79,8 @@
 "event.context-menu.edit" = "Aanpassen";
 "event.context-menu.remove" = "Verwijderen";
 
-"reaction-picker.title" = "Tik op een emoji om de reactie te versturen.";
+"reaction-picker.navigation-title" = "";
+"reaction-picker.search" = "";
 
 "settings.title" = "Instellingen";
 "settings.accent-color" = "Accent kleur";

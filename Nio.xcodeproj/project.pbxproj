@@ -38,6 +38,8 @@
 		392389CC238EBB1500B2E1DF /* ReverseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392389CB238EBB1400B2E1DF /* ReverseList.swift */; };
 		393411D1239087D2003B49B8 /* EventCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393411D0239087D2003B49B8 /* EventCollectionTests.swift */; };
 		3970DC942385A8BE00EFE31B /* KeyboardObserving in Frameworks */ = {isa = PBXBuildFile; productRef = 3970DC932385A8BE00EFE31B /* KeyboardObserving */; };
+		397CF19824A6BA8300CB4360 /* Smile in Frameworks */ = {isa = PBXBuildFile; productRef = 397CF19724A6BA8300CB4360 /* Smile */; };
+		397CF19D24A774AC00CB4360 /* EmojiCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397CF19C24A774AC00CB4360 /* EmojiCollection.swift */; };
 		3984654523B7ECBA006C173B /* MXURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3984654423B7ECBA006C173B /* MXURL.swift */; };
 		3984654823B8D809006C173B /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 3984654723B8D809006C173B /* SDWebImageSwiftUI */; };
 		39B834C0243FC42000AE1EA0 /* TypingIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B834BF243FC42000AE1EA0 /* TypingIndicatorView.swift */; };
@@ -200,6 +202,7 @@
 		393411D0239087D2003B49B8 /* EventCollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionTests.swift; sourceTree = "<group>"; };
 		393411D2239087D2003B49B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3955DD36245C371C00827F07 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		397CF19C24A774AC00CB4360 /* EmojiCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiCollection.swift; sourceTree = "<group>"; };
 		3984654423B7ECBA006C173B /* MXURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MXURL.swift; sourceTree = "<group>"; };
 		3997DCCF245732F000763C07 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		39B834BF243FC42000AE1EA0 /* TypingIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypingIndicatorView.swift; sourceTree = "<group>"; };
@@ -292,6 +295,7 @@
 				3970DC942385A8BE00EFE31B /* KeyboardObserving in Frameworks */,
 				87FE3870173FD55A91B15921 /* Pods_Nio.framework in Frameworks */,
 				CADF664224614D2300F5063F /* NioKit.framework in Frameworks */,
+				397CF19824A6BA8300CB4360 /* Smile in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +414,7 @@
 			children = (
 				3922219524366989004D8794 /* EventContextMenu.swift */,
 				3922219F2437285B004D8794 /* ReactionPicker.swift */,
+				397CF19C24A774AC00CB4360 /* EmojiCollection.swift */,
 				392221AF243A6F8E004D8794 /* EventContextMenuModel.swift */,
 			);
 			path = ContextMenu;
@@ -747,6 +752,7 @@
 				3984654723B8D809006C173B /* SDWebImageSwiftUI */,
 				CAF2AE9C245DF4B400D84133 /* CommonMarkAttributedString */,
 				390D63A32465F62D00B8F640 /* BlurHash */,
+				397CF19724A6BA8300CB4360 /* Smile */,
 			);
 			productName = Nio;
 			productReference = 39C931D92384328A004449E1 /* Nio.app */;
@@ -843,6 +849,7 @@
 				3984654623B8D809006C173B /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 				CAF2AE9B245DF4B400D84133 /* XCRemoteSwiftPackageReference "CommonMarkAttributedString" */,
 				390D63A22465F62C00B8F640 /* XCRemoteSwiftPackageReference "BlurHash" */,
+				397CF19624A6BA8300CB4360 /* XCRemoteSwiftPackageReference "Smile" */,
 			);
 			productRefGroup = 39C931DA2384328A004449E1 /* Products */;
 			projectDirPath = "";
@@ -1139,6 +1146,7 @@
 				3902B8A32395935600698B87 /* SettingsView.swift in Sources */,
 				CAAF5BF82478696F006FDC33 /* UITextViewWrapper.swift in Sources */,
 				3921175F244256AF00892B00 /* Strings.swift in Sources */,
+				397CF19D24A774AC00CB4360 /* EmojiCollection.swift in Sources */,
 				392221B0243A6F8E004D8794 /* EventContextMenuModel.swift in Sources */,
 				3922219624366989004D8794 /* EventContextMenu.swift in Sources */,
 				39C931F523846966004449E1 /* LoginView.swift in Sources */,
@@ -1397,8 +1405,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 23;
 				DEVELOPMENT_ASSET_PATHS = "\"Nio/Preview Content\"";
+				DEVELOPMENT_TEAM = HU85FER47E;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Nio/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1407,6 +1418,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1420,6 +1432,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 23;
 				DEVELOPMENT_ASSET_PATHS = "\"Nio/Preview Content\"";
+				DEVELOPMENT_TEAM = HU85FER47E;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Nio/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1427,6 +1440,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = chat.nio.iOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1618,6 +1632,14 @@
 				minimumVersion = 0.2.1;
 			};
 		};
+		397CF19624A6BA8300CB4360 /* XCRemoteSwiftPackageReference "Smile" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onmyway133/Smile";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.0;
+			};
+		};
 		3984654623B8D809006C173B /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
@@ -1646,6 +1668,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3970DC922385A8BE00EFE31B /* XCRemoteSwiftPackageReference "KeyboardObserving" */;
 			productName = KeyboardObserving;
+		};
+		397CF19724A6BA8300CB4360 /* Smile */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 397CF19624A6BA8300CB4360 /* XCRemoteSwiftPackageReference "Smile" */;
+			productName = Smile;
 		};
 		3984654723B8D809006C173B /* SDWebImageSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
